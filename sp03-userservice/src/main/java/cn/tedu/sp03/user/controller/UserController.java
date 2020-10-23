@@ -31,7 +31,7 @@ public class UserController {
     }
 
     @GetMapping("/{userId}/score")
-    public JsonResult addScore(
+    public JsonResult<?> addScore(
             @PathVariable Integer userId, Integer score) {
         userService.addScore(userId, score);
         return JsonResult.ok();
