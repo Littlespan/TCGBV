@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author 作者：hyh
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @description 描述：
  */
 @Slf4j
-@Controller
+@RestController
 public class UserController {
     @Autowired
     private UserService userService;
