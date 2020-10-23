@@ -47,6 +47,6 @@ public class OrderController {
                 new Item(4,"ddd",1),
                 new Item(5,"eee",5)));
         orderService.addOrder(order);
-        return JsonResult.ok(order).msg("添加订单成功");
+        return JsonResult.ok(order).msg("");
     }
 }
