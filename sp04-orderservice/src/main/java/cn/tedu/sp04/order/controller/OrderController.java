@@ -40,12 +40,13 @@ public class OrderController {
         Order order = new Order();
         order.setId("123abc");
         order.setUser(new User(7,null,null));
-        order.setItems(Arrays.asList(new Item(1,"aaa",2),
+        order.setItems(Arrays.asList(
+                new Item(1,"aaa",2),
                 new Item(2,"bbb",1),
                 new Item(3,"ccc",3),
                 new Item(4,"ddd",1),
                 new Item(5,"eee",5)));
         orderService.addOrder(order);
-        return JsonResult.ok();
+        return JsonResult.ok(order).msg("添加订单成功");
     }
 }

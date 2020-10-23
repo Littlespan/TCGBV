@@ -3,3 +3,8 @@ spring:
     name: item-service
 server:
   port: 8001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka
