@@ -2,7 +2,9 @@ package cn.tedu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -15,8 +17,12 @@ import org.springframework.web.client.RestTemplate;
 public class SpringBootRun {
 
     @Bean
+    @LoadBalanced
     public RestTemplate getRestTemplate(){
-        return new RestTemplate();
+        SimpleClientHttpRequestFactory simpleClientHttpRequestFactory= new SimpleClientHttpRequestFactory();
+        simpleClientHttpRequestFactory.setConnectTimeout(1000);
+        simpleClientHttpRequestFactory.setReadTimeout(1000);
+        return new RestTemplate(simpleClientHttpRequestFactory);
     }
 
     public static void main(String[] args) {
