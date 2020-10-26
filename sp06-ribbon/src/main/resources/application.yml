@@ -1,9 +1,9 @@
 spring:
   application:
-    name: order-service
+    name: ribbon
 
 server:
-  port: 8201
+  port: 3001
 
 eureka:
   client:
