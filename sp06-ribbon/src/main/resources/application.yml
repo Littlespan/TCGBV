@@ -14,3 +14,17 @@ ribbon:
   MaxAutoRetriesNextServer: 2
   MaxAutoRetries: 1
   OkToRetryOnAllOperations: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 500
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

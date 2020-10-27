@@ -2,6 +2,8 @@ package cn.tedu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
@@ -13,7 +15,9 @@ import org.springframework.web.client.RestTemplate;
  * @email 邮箱：15205698133@163.com
  * @description 描述：
  */
-@SpringBootApplication
+//@SpringBootApplication
+//@EnableCircuitBreaker
+@SpringCloudApplication
 public class SpringBootRun {
 
     @Bean

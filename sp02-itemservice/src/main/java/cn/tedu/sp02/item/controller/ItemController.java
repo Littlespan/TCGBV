@@ -30,7 +30,7 @@ public class ItemController {
     public JsonResult<List<Item>> getItems(@PathVariable String orderId) throws InterruptedException {
         log.info("server.port="+port+", orderId="+orderId);
 
-        if(Math.random()<0.9){
+        if(Math.random()<0.6){
             long t = new Random().nextInt(5000);
             log.info("item-service-"+port+" - 暂停 "+t);
             Thread.sleep(t);
