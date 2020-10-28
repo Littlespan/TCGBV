@@ -16,8 +16,10 @@ import cn.tedu.sp01.pojo.User;
 import cn.tedu.sp08.Service.OrderFeignService;
 import cn.tedu.web.util.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 @RestController
 public class FeignController {

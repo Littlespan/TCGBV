@@ -3,6 +3,7 @@ package cn.tedu.sp08.Service;
 import cn.tedu.sp01.pojo.Item;
 import cn.tedu.web.util.JsonResult;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
