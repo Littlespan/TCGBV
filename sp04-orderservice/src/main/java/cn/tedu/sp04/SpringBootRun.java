@@ -2,6 +2,8 @@ package cn.tedu.sp04;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author 作者：hyh
@@ -9,7 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @email 邮箱：15205698133@163.com
  * @description 描述：
  */
-@SpringBootApplication
+@SpringCloudApplication
+@EnableFeignClients
 public class SpringBootRun {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootRun.class,args);
