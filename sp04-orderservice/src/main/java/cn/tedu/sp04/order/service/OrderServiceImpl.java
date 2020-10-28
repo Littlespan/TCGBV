@@ -27,10 +27,10 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order getOrder(String orderId) {
-        //调用user-service获取用户信息
+        //TODO: 调用user-service获取用户信息
         JsonResult<User> user = userFeignService.getUser(7);
 
-        //调用item-service获取商品信息
+        //TODO: 调用item-service获取商品信息
         JsonResult<List<Item>> items = itemFeignService.getItems(orderId);
 
 
@@ -43,7 +43,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void addOrder(Order order) {
-        //调用item-service减少商品库存
+        //TODO: 调用item-service减少商品库存
         itemFeignService.decreaseNumber(order.getItems());
 
         //TODO: 调用user-service增加用户积分
