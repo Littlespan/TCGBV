@@ -29,6 +29,7 @@ public class ItemServiceFallback implements FallbackProvider {
         //当执行item-service失败，
         //应用当前这个降级类
         return "item-service";
+//        return "*";
         //星号和null都表示所有微服务失败都应用当前降级类
         //"*"; //null;
     }
@@ -37,12 +38,11 @@ public class ItemServiceFallback implements FallbackProvider {
     //ClientHttpResponse中封装降级响应
     @Override
     public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
-        return response();
+        return getClientHttpResponse();
     }
 
-    private ClientHttpResponse response() {
+    private ClientHttpResponse getClientHttpResponse() {
         return new ClientHttpResponse() {
-            //下面三个方法都是协议号
             @Override
             public HttpStatus getStatusCode() throws IOException {
                 return HttpStatus.OK;

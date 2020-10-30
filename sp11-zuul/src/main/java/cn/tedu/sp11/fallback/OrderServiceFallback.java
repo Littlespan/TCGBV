@@ -31,10 +31,9 @@ public class OrderServiceFallback implements FallbackProvider {
 
     @Override
     public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
-        return response();
+        return getClientHttpResponse();
     }
-
-    private ClientHttpResponse response() {
+    private ClientHttpResponse getClientHttpResponse() {
         return new ClientHttpResponse() {
             @Override
             public HttpStatus getStatusCode() throws IOException {
