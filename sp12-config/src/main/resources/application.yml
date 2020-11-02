@@ -1,4 +1,9 @@
 spring:
+  rabbitmq:
+    host: 192.168.64.140
+    port: 5672
+    username: admin
+    password: admin
   application:
     name: config-server
   cloud:
@@ -6,7 +11,7 @@ spring:
       server:
         git:
           uri: https://github.com/Littlespan/sp-config.git
-          searchPaths: config
+          searchPaths:
           #username: your-username
           #password: your-password
 
@@ -17,3 +22,9 @@ eureka:
 
 server:
   port: 6001
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
