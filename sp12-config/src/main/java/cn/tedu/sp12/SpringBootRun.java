@@ -12,7 +12,6 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * @description 描述：
  */
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableConfigServer
 public class SpringBootRun {
     public static void main(String[] args) {
